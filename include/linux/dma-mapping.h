@@ -49,6 +49,10 @@ struct dma_map_ops {
 	int (*mapping_error)(struct device *dev, dma_addr_t dma_addr);
 	int (*dma_supported)(struct device *dev, u64 mask);
 	int (*set_dma_mask)(struct device *dev, u64 mask);
+
+	size_t (*iova_get_free_total)(struct device *dev);
+	size_t (*iova_get_free_max)(struct device *dev);
+
 	int is_phys;
 };
 

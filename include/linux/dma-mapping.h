@@ -50,6 +50,8 @@ struct dma_map_ops {
 	int (*dma_supported)(struct device *dev, u64 mask);
 	int (*set_dma_mask)(struct device *dev, u64 mask);
 
+	dma_addr_t (*iova_alloc)(struct device *dev, size_t size);
+	void (*iova_free)(struct device *dev, dma_addr_t addr, size_t size);
 	size_t (*iova_get_free_total)(struct device *dev);
 	size_t (*iova_get_free_max)(struct device *dev);
 

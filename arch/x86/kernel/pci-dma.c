@@ -98,7 +98,7 @@ void *dma_generic_alloc_coherent(struct device *dev, size_t size,
 				 dma_addr_t *dma_addr, gfp_t flag)
 {
 	unsigned long dma_mask;
-	struct page *page = NULL;
+	struct page *page;
 	unsigned int count = PAGE_ALIGN(size) >> PAGE_SHIFT;
 	dma_addr_t addr;
 
@@ -106,6 +106,7 @@ void *dma_generic_alloc_coherent(struct device *dev, size_t size,
 
 	flag |= __GFP_ZERO;
 again:
+	page = NULL;
 	if (!(flag & GFP_ATOMIC))
 		page = dma_alloc_from_contiguous(dev, count, get_order(size));
 	if (!page)

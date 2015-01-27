@@ -533,7 +533,9 @@ static const u32 __wl_cipher_suites[] = {
 	WLAN_CIPHER_SUITE_WEP104,
 	WLAN_CIPHER_SUITE_TKIP,
 	WLAN_CIPHER_SUITE_CCMP,
+#ifdef MFP
 	WLAN_CIPHER_SUITE_AES_CMAC,
+#endif
 };
 
 /* There isn't a lot of sense in it, but you can transmit anything you like */

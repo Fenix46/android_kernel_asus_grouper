@@ -183,10 +183,10 @@ static void acct_isolated(struct zone *zone, struct compact_control *cc)
 		count[lru]++;
 	}
 
-	cc->nr_anon = count[LRU_ACTIVE_ANON] + count[LRU_INACTIVE_ANON];
-	cc->nr_file = count[LRU_ACTIVE_FILE] + count[LRU_INACTIVE_FILE];
-	__mod_zone_page_state(zone, NR_ISOLATED_ANON, cc->nr_anon);
-	__mod_zone_page_state(zone, NR_ISOLATED_FILE, cc->nr_file);
+	cc = count[LRU_ACTIVE_ANON] + count[LRU_INACTIVE_ANON];
+	cc = count[LRU_ACTIVE_FILE] + count[LRU_INACTIVE_FILE];
+	__mod_zone_page_state(zone, NR_ISOLATED_ANON, cc);
+	__mod_zone_page_state(zone, NR_ISOLATED_FILE, cc);
 }
 
 /* Similar to reclaim, but different enough that they don't share logic */

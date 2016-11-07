@@ -33,7 +33,6 @@
 #include <asm/mach/arch.h>
 #include <asm/dma-iommu.h>
 #include <asm/mach/map.h>
-#include <asm/system_info.h>
 #include <asm/dma-contiguous.h>
 
 #include "mm.h"

@@ -5829,7 +5829,7 @@ static int __alloc_contig_migrate_range(unsigned long start, unsigned long end)
 
 		ret = migrate_pages(&cc.migratepages,
 				    __alloc_contig_migrate_alloc,
-				    0, false, MIGRATE_SYNC);
+				    0, false, false);
 	}
 
 	putback_lru_pages(&cc.migratepages);
@@ -5874,7 +5874,7 @@ static int __reclaim_pages(struct zone *zone, gfp_t gfp_mask, int count)
 						      NULL);
 		if (!did_some_progress) {
 			/* Exhausted what can be done so it's blamo time */
-			out_of_memory(zonelist, gfp_mask, order, NULL, false);
+			//out_of_memory(zonelist, gfp_mask, order, NULL, false);
 		}
 	}
 

@@ -40,7 +40,7 @@
 #include <mach/io.h>
 #include <mach/iomap.h>
 #include <mach/legacy_irq.h>
-#include <linux/nvmap.h>
+#include <mach/nvmap.h>
 
 #include "../../../../video/tegra/host/host1x/host1x_syncpt.h"
 #include "../../../../video/tegra/host/dev.h"

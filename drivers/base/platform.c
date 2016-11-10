@@ -12,6 +12,7 @@
 
 #include <linux/string.h>
 #include <linux/platform_device.h>
+#include <linux/device.h>
 #include <linux/of_device.h>
 #include <linux/module.h>
 #include <linux/init.h>
@@ -22,6 +23,7 @@
 #include <linux/pm_runtime.h>
 
 #include <asm/dma-iommu.h>
+#include <asm/device.h>
 
 #include "base.h"
 
